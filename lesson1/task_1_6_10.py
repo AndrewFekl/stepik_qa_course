@@ -8,21 +8,13 @@ try:
     browser.get(link2)
 
     # Ваш код, который заполняет обязательные поля
-    inputs = browser.find_elements_by_css_selector("input:required")
     first_name = "Ivan"
     last_name = "Ivanov"
     email = "ya@ya.ru"
 
-    for input in inputs:
-        placeholder = input.get_attribute("placeholder")
-        if "first" in placeholder:
-            input.send_keys(first_name)
-        elif "last" in placeholder:
-            input.send_keys(last_name)
-        elif "email" in placeholder:
-            input.send_keys(email)
-        else:
-            break
+    browser.find_element_by_class_name("first_block .first").send_keys(first_name)
+    browser.find_element_by_class_name("first_block .second").send_keys(last_name)
+    browser.find_element_by_class_name("first_block .third").send_keys(email)
 
     # Отправляем заполненную форму
     button = browser.find_element_by_css_selector("button.btn")
