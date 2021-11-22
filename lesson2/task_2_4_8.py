@@ -29,7 +29,7 @@ try:
     # Отправка формы
     button = browser.find_element(By.ID, "solve")
     button.click()
-    # Получение текста по результатам отправки формы
+
 
 except Exception as ex:
     print(ex)
